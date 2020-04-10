@@ -24,7 +24,7 @@ $ python3 setup.py build_ext --inplace
 ```
 finally, run pep.py once to create the default config file and edit it
 ```
-$ python3 pep.py
+$ python3 hoaq.py
 ...
 $ nano config.ini
 ```
