@@ -142,6 +142,7 @@ class config:
 
 		self.config.add_section("discord")
 		self.config.set("discord", "enable", "0")
+		self.config.set("discord", "boturl", "")
 		self.config.set("discord", "anticheat", "")
 		self.config.set("discord", "ranked", "")
 		self.config.set("discord", "announcement", "")
