@@ -28,9 +28,9 @@ $ python3 pep.py
 ...
 $ nano config.ini
 ```
-you can run pep.py by typing
+you can run HoaqBoat by typing
 ```
-$ python3 pep.py
+$ python3 hoaq.py
 ```
 
 ## License

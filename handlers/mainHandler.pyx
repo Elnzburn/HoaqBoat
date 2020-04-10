@@ -243,5 +243,5 @@ class handler(requestsManager.asyncRequestHandler):
 	@tornado.web.asynchronous
 	@tornado.gen.engine
 	def asyncGet(self):
-		html = 	"<html><head><title>HoaqBoat??<meta http-equiv="refresh" content="0; url=https://www.youtube.com/watch?v=LEHiYpaQ9JU"></title></head></html>"
+		html = 	"<html><head><title>HoaqBoat??</title>"
 		self.write(html)
