@@ -26,7 +26,7 @@ def printServerStartHeader(asciiArt=True):
 		print("              \\ . ..  .. . /")
 		print("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^{}".format(bcolors.ENDC))
 
-	printColored("> Welcome to pep.py osu!bancho server v{}".format(glob.VERSION), bcolors.GREEN)
+	printColored("> Welcome to HoaqBoat osu!bancho server v{}".format(glob.VERSION), bcolors.GREEN)
 	printColored("> Made by the Ripple team, custom by osu!lumilous", bcolors.GREEN)
 	printColored("> {}https://zxq.co/ripple/pep.py".format(bcolors.UNDERLINE), bcolors.GREEN)
 	printColored("> Press CTRL+C to exit\n", bcolors.GREEN)
