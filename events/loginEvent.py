@@ -162,7 +162,7 @@ def handle(tornadoRequest):
 				raise exceptions.banchoMaintenanceException()
 			else:
 				# We are mod/admin, send warning notification and continue
-				responseToken.enqueue(serverPackets.notification("Hoaq is in maintenance mode. Only mods/admins have full access to the server.\nType !system maintenance off in chat to turn off maintenance mode."))
+				responseToken.enqueue(serverPackets.notification("HoaqฺBoat is in maintenance mode. Only mods/admins have full access to the server.\nType !system maintenance off in chat to turn off maintenance mode."))
 
 		# BAN CUSTOM CHEAT CLIENTS
 		#Ainu Client 2020
@@ -172,11 +172,11 @@ def handle(tornadoRequest):
 			if tornadoRequest.request.headers.get("ainu") == "happy":
 				log.info("Account ID {} เขาใช้ Ainu Client".format(userID))
 				if userUtils.isRestricted(userID):
-					responseToken.enqueue(serverPackets.notification("You're banned because you're currently using Ainu Client... ENJOY YOUR RESTRICTION"))
+					responseToken.enqueue(serverPackets.notification("osu!lumilous Anticheat - เจ้าโดนแบนนะเพราะเจ้าใช้ Ainu Cilent ในเซิฟที่ไม่อนุญาตินะ... ทำไมเข้าไม่อ่านกฎก่อนหล่ะ? แต่อย่างไรก็ตาม ขอให้สนุกกับผลที่ได้รับนะ :)"))
 					if glob.conf.config["discord"]["enable"]:
 							webhook = Webhook(glob.conf.config["discord"]["anticheat"],
 											  color=0xadd836,
-											  footer="Man... this is worst player. [ Client AC ]")
+											  footer="Man... this is worst player.")
 							webhook.set_title(title=f"Catched some cheater {username} ({userID})")
 							webhook.set_desc(f'This body catched with flag {haxFlags}\nIn enuming: {hack}')
 							webhook.post()
@@ -186,7 +186,7 @@ def handle(tornadoRequest):
 					if glob.conf.config["discord"]["enable"]:
 							webhook = Webhook(glob.conf.config["discord"]["anticheat"],
 											  color=0xadd836,
-											  footer="Man... this is worst player. [ Client AC ]")
+											  footer="Man... this is worst player.")
 							webhook.set_title(title=f"Catched some cheater {username} ({userID})")
 							webhook.set_desc(f'This body catched with flag {haxFlags}\nIn enuming: {hack}')
 							webhook.post()
@@ -199,7 +199,7 @@ def handle(tornadoRequest):
 					if glob.conf.config["discord"]["enable"]:
 							webhook = Webhook(glob.conf.config["discord"]["anticheat"],
 											  color=0xadd836,
-											  footer="Man... this is worst player. [ Client AC ]")
+											  footer="Man... this is worst player.")
 							webhook.set_title(title=f"Catched some cheater {username} ({userID})")
 							webhook.set_desc(f'This body catched with flag {haxFlags}\nIn enuming: {hack}')
 							webhook.post()
@@ -209,7 +209,7 @@ def handle(tornadoRequest):
 					if glob.conf.config["discord"]["enable"]:
 							webhook = Webhook(glob.conf.config["discord"]["anticheat"],
 											  color=0xadd836,
-											  footer="Man... this is worst player. [ Client AC ]")
+											  footer="Man... this is worst player.")
 							webhook.set_title(title=f"Catched some cheater {username} ({userID})")
 							webhook.set_desc(f'This body catched with flag {haxFlags}\nIn enuming: {hack}')
 							webhook.post()
@@ -222,7 +222,7 @@ def handle(tornadoRequest):
 					if glob.conf.config["discord"]["enable"]:
 							webhook = Webhook(glob.conf.config["discord"]["anticheat"],
 											  color=0xadd836,
-											  footer="Man... this is worst player. [ Client AC ]")
+											  footer="Man... this is worst player.")
 							webhook.set_title(title=f"Catched some cheater {username} ({userID})")
 							webhook.set_desc(f'This body catched with flag {haxFlags}\nIn enuming: {hack}')
 							webhook.post()
@@ -232,7 +232,7 @@ def handle(tornadoRequest):
 					if glob.conf.config["discord"]["enable"]:
 							webhook = Webhook(glob.conf.config["discord"]["anticheat"],
 											  color=0xadd836,
-											  footer="Man... this is worst player. [ Client AC ]")
+											  footer="Man... this is worst player.")
 							webhook.set_title(title=f"Catched some cheater {username} ({userID})")
 							webhook.set_desc(f'This body catched with flag {haxFlags}\nIn enuming: {hack}')
 							webhook.post()
@@ -244,7 +244,7 @@ def handle(tornadoRequest):
 					if glob.conf.config["discord"]["enable"]:
 							webhook = Webhook(glob.conf.config["discord"]["anticheat"],
 											  color=0xadd836,
-											  footer="Man... this is worst player. [ Client AC ]")
+											  footer="Man... this is worst player.")
 							webhook.set_title(title=f"Catched some cheater {username} ({userID})")
 							webhook.set_desc(f'This body catched with flag {haxFlags}\nIn enuming: {hack}')
 							webhook.post()
@@ -254,7 +254,7 @@ def handle(tornadoRequest):
 					if glob.conf.config["discord"]["enable"]:
 							webhook = Webhook(glob.conf.config["discord"]["anticheat"],
 											  color=0xadd836,
-											  footer="Man... this is worst player. [ Client AC ]")
+											  footer="Man... this is worst player.")
 							webhook.set_title(title=f"Catched some cheater {username} ({userID})")
 							webhook.set_desc(f'This body catched with flag {haxFlags}\nIn enuming: {hack}')
 							webhook.post()
@@ -266,7 +266,7 @@ def handle(tornadoRequest):
 					if glob.conf.config["discord"]["enable"]:
 							webhook = Webhook(glob.conf.config["discord"]["anticheat"],
 											  color=0xadd836,
-											  footer="Man... this is worst player. [ Client AC ]")
+											  footer="Man... this is worst player.")
 							webhook.set_title(title=f"Catched some cheater {username} ({userID})")
 							webhook.set_desc(f'This body catched with flag {haxFlags}\nIn enuming: {hack}')
 							webhook.post()
@@ -276,7 +276,7 @@ def handle(tornadoRequest):
 					if glob.conf.config["discord"]["enable"]:
 							webhook = Webhook(glob.conf.config["discord"]["anticheat"],
 											  color=0xadd836,
-											  footer="Man... this is worst player. [ Client AC ]")
+											  footer="Man... this is worst player.")
 							webhook.set_title(title=f"Catched some cheater {username} ({userID})")
 							webhook.set_desc(f'This body catched with flag {haxFlags}\nIn enuming: {hack}')
 							webhook.post()
@@ -296,6 +296,8 @@ def handle(tornadoRequest):
 		# TODO: Configurable default channels
 		chat.joinChannel(token=responseToken, channel="#osu")
 		chat.joinChannel(token=responseToken, channel="#announce")
+		chat.joinChannel(token=responseToken, channel="#thai")
+
 
 		# Join admin channel if we are an admin
 		if responseToken.admin:
@@ -375,7 +377,7 @@ def handle(tornadoRequest):
 		responseData += serverPackets.loginFailed()
 	except exceptions.banchoRestartingException:
 		# Bancho is restarting
-		responseData += serverPackets.notification("Bancho is restarting. Try again in a few minutes.")
+		responseData += serverPackets.notification("HoaqBoat is restarting. Try again in a few minutes.")
 		responseData += serverPackets.loginFailed()
 	except exceptions.need2FAException:
 		# User tried to log in from unknown IP
@@ -384,7 +386,7 @@ def handle(tornadoRequest):
 		# Using oldoldold client, we don't have client data. Force update.
 		# (we don't use enqueue because we don't have a token since login has failed)
 		responseData += serverPackets.forceUpdate()
-		responseData += serverPackets.notification("Hory shitto, your client is TOO old! Nice prehistory! Please turn update it from the settings!")
+		responseData += serverPackets.notification("Your client is too Old, Please turn update it from the settings!")
 	except:
 		log.error("Unknown error!\n```\n{}\n{}```".format(sys.exc_info(), traceback.format_exc()))
 	finally:

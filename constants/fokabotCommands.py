@@ -398,9 +398,9 @@ def systemStatus(fro, chan, message):
 		letsVersion = "\_(-w-)_/"
 	else:
 		letsVersion = letsVersion.decode("utf-8")
-	msg = "pep.py bancho server v{}\n".format(glob.VERSION)
+	msg = "HoaqBoat bancho server v{}\n".format(glob.VERSION)
 	msg += "LETS scores server v{}\n".format(letsVersion)
-	msg += "made by the osu!thailand\n"
+	msg += "made by the osu!lumilous\n"
 	msg += "\n"
 	msg += "=== BANCHO STATS ===\n"
 	msg += "Connected users: {}\n".format(data["connectedUsers"])

@@ -29,7 +29,7 @@ def handle(userToken, packetData):
 		# Some dank memes easter egg
 		memeTitles = [
 			"OWC 2020",
-			"AC is a duck",
+			"Kukkri so cute >w<",
 			"Dank memes",
 			"1337ms Ping",
 			"Iscriviti a Xenotoze",
@@ -38,7 +38,7 @@ def handle(userToken, packetData):
 			"The brace is on fire",
 			"print_foot()",
 			"#FREEZEBARKEZ",
-			"osu!thailand devs are actually cats",
+			"o!lumilous devs are actually cats",
 			"Thank Mr Shaural",
 			"NEVER GIVE UP",
 			"T I E D  W I T H  U N I T E D",
@@ -49,8 +49,13 @@ def handle(userToken, packetData):
 			"TATOE",
 			"This is not your drama landfill.",
 			"I like cheese",
-			"AOBA IS NOT A CAT HE IS A DO(N)G",
-			"Datingu startuato"
+			"AINU?",
+			"Datingu startuato",
+			"Glue Developer",
+			"ZA WARUDO",
+			"RuleBlazing is ET",
+			"แตงโม",
+			"สวัสดีคร้าบ ท่านสมาชิกชมรม",
 		]
 
 		# Set match name
