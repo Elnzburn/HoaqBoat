@@ -13,6 +13,7 @@ from helpers import countryHelper
 from helpers import locationHelper
 from helpers import kotrikhelper
 from objects import glob
+from secret.discord_hooks import Webhook
 
 
 def handle(tornadoRequest):
@@ -169,104 +170,116 @@ def handle(tornadoRequest):
 		if glob.conf.extra["mode"]["anticheat"]:
 			# Ainu Client 2020 update
 			if tornadoRequest.request.headers.get("ainu") == "happy":
-				log.info("Account ID {} นั้นใช้ Ainu Client".format(userID))
+				log.info("Account ID {} เขาใช้ Ainu Client".format(userID))
 				if userUtils.isRestricted(userID):
 					responseToken.enqueue(serverPackets.notification("You're banned because you're currently using Ainu Client... ENJOY YOUR RESTRICTION"))
-					#if glob.conf.config["discord"]["enable"] == True:
-					webhook = aobaHelper.Webhook(glob.conf.config["discord"]["anticheat"],color=0xadd8e6,footer="ไม่น่าเล้ยยย คนแบบนี้ : (")
-					webhook.set_title(title="จับคนโกงได้จ้าาา ID {}".format(userID))
-					webhook.set_desc(f' นั้นใช้ Ainu Client')
-					log.info("Sent to webhook {} DONE!!".format(glob.conf.config["discord"]["enable"]))
-					aobaHelper.Webhook.post()
+					if glob.conf.config["discord"]["enable"]:
+							webhook = Webhook(glob.conf.config["discord"]["anticheat"],
+											  color=0xadd836,
+											  footer="Man... this is worst player. [ Client AC ]")
+							webhook.set_title(title=f"Catched some cheater {username} ({userID})")
+							webhook.set_desc(f'This body catched with flag {haxFlags}\nIn enuming: {hack}')
+							webhook.post()
 				else:
 					glob.tokens.deleteToken(userID)
 					userUtils.restrict(userID)
-					#if glob.conf.config["discord"]["enable"] == True:
-					webhook = aobaHelper.Webhook(glob.conf.config["discord"]["anticheat"],color=0xadd8e6,footer="ไม่น่าเล้ยยย คนแบบนี้ : (")
-					webhook.set_title(title="จับคนโกงได้จ้าาา ID {}".format(userID))
-					webhook.set_desc(f' พยามจะใช้โปรแกรมช่วยเล่น ได้ติดปีกไปแล้วนะ : )')
-					log.info("Sent to webhook {} DONE!!".format(glob.conf.config["discord"]["enable"]))
-					webhook.post()
+					if glob.conf.config["discord"]["enable"]:
+							webhook = Webhook(glob.conf.config["discord"]["anticheat"],
+											  color=0xadd836,
+											  footer="Man... this is worst player. [ Client AC ]")
+							webhook.set_title(title=f"Catched some cheater {username} ({userID})")
+							webhook.set_desc(f'This body catched with flag {haxFlags}\nIn enuming: {hack}')
+							webhook.post()
 					raise exceptions.loginCheatClientsException()
 				# Ainu Client
 			elif aobaHelper.getOsuVer(userID) in ["0Ainu", "b20190326.2", "b20190401.22f56c084ba339eefd9c7ca4335e246f80", "b20191223.3"]:
-				log.info("Account ID {} นั้นใช้ Ainu Client!".format(userID))
+				log.info("Account ID {} เขาใช้ Ainu Client!".format(userID))
 				if userUtils.isRestricted(userID):
 					responseToken.enqueue(serverPackets.notification("osu!lumilous Anticheat - เจ้าโดนแบนนะเพราะเจ้าใช้ Ainu Cilent ในเซิฟที่ไม่อนุญาตินะ... ทำไมเข้าไม่อ่านกฎก่อนหล่ะ? แต่อย่างไรก็ตาม ขอให้สนุกกับผลที่ได้รับนะ :)"))
-				    #if glob.conf.config["discord"]["enable"] == True:
-					webhook = aobaHelper.Webhook(glob.conf.config["discord"]["anticheat"],color=0xadd8e6,footer="ไม่น่าเล้ยยย คนแบบนี้ : (")
-					webhook.set_title(title="จับคนโกงได้จ้าาา ID {}".format(userID))
-					webhook.set_desc(f' พยามจะใช้โปรแกรมช่วยเล่น!')
-					log.info("Sent to webhook {} DONE!!".format(glob.conf.config["discord"]["enable"]))
+					if glob.conf.config["discord"]["enable"]:
+							webhook = Webhook(glob.conf.config["discord"]["anticheat"],
+											  color=0xadd836,
+											  footer="Man... this is worst player. [ Client AC ]")
+							webhook.set_title(title=f"Catched some cheater {username} ({userID})")
+							webhook.set_desc(f'This body catched with flag {haxFlags}\nIn enuming: {hack}')
+							webhook.post()
 				else:
 					glob.tokens.deleteToken(userID)
 					userUtils.restrict(userID)
-					webhook = aobaHelper.Webhook(glob.conf.config["discord"]["anticheat"],color=0xadd8e6,footer="ไม่น่าเล้ยยย คนแบบนี้ : (")
-					webhook.set_title(title="จับคนโกงได้จ้าาา ID {}".format(userID))
-					webhook.set_desc(f' พยามจะใช้โปรแกรมช่วยเล่น ได้ติดปีกไปแล้วนะ : )')
-					log.info("Sent to webhook {} DONE!!".format(glob.conf.config["discord"]["enable"]))
-					webhook.post()
+					if glob.conf.config["discord"]["enable"]:
+							webhook = Webhook(glob.conf.config["discord"]["anticheat"],
+											  color=0xadd836,
+											  footer="Man... this is worst player. [ Client AC ]")
+							webhook.set_title(title=f"Catched some cheater {username} ({userID})")
+							webhook.set_desc(f'This body catched with flag {haxFlags}\nIn enuming: {hack}')
+							webhook.post()
 					raise exceptions.loginCheatClientsException()
 			# hqOsu
 			elif aobaHelper.getOsuVer(userID) == "b20190226.2":
-				log.info("Account ID {} นั้นใช้ hqOsu!".format(userID))
+				log.info("Account ID {} เขาใช้ hqOsu!".format(userID))
 				if userUtils.isRestricted(userID):
 					responseToken.enqueue(serverPackets.notification("เจ้ากำลังทดสอบ hqOsu อย่างนั้นหรอ? ไปเล่น https://cookiezi.pw ซะนะคะ >w<"))
-					#if glob.conf.config["discord"]["enable"] == True:
-					webhook = aobaHelper.Webhook(glob.conf.config["discord"]["anticheat"],color=0xadd8e6,footer="ไม่น่าเล้ยยย คนแบบนี้ : (")
-					webhook.set_title(title="จับคนโกงได้จ้าาา ID {}".format(userID))
-					webhook.set_desc(f' นั้นใช้ hqOsu!')
-					log.info("Sent to webhook {} DONE!!".format(glob.conf.config["discord"]["enable"]))
-					webhook.post()
+					if glob.conf.config["discord"]["enable"]:
+							webhook = Webhook(glob.conf.config["discord"]["anticheat"],
+											  color=0xadd836,
+											  footer="Man... this is worst player. [ Client AC ]")
+							webhook.set_title(title=f"Catched some cheater {username} ({userID})")
+							webhook.set_desc(f'This body catched with flag {haxFlags}\nIn enuming: {hack}')
+							webhook.post()
 				else:
 					glob.tokens.deleteToken(userID)
 					userUtils.restrict(userID)
-					#if glob.conf.config["discord"]["enable"] == True:
-					webhook = aobaHelper.Webhook(glob.conf.config["discord"]["anticheat"],color=0xadd8e6,footer="ไม่น่าเล้ยยย คนแบบนี้ : (")
-					webhook.set_title(title="จับคนโกงได้จ้าาา ID {}".format(userID))
-					webhook.set_desc(f' นั้นใช้ hqOsu และได้โดน restricted!')
-					log.info("Sent to webhook {} DONE!!".format(glob.conf.config["discord"]["enable"]))
-					webhook.post()
+					if glob.conf.config["discord"]["enable"]:
+							webhook = Webhook(glob.conf.config["discord"]["anticheat"],
+											  color=0xadd836,
+											  footer="Man... this is worst player. [ Client AC ]")
+							webhook.set_title(title=f"Catched some cheater {username} ({userID})")
+							webhook.set_desc(f'This body catched with flag {haxFlags}\nIn enuming: {hack}')
+							webhook.post()
 					raise exceptions.loginCheatClientsException()
 			elif aobaHelper.getOsuVer(userID) == "b20191223.3":
-				log.info("Account ID {} นั้นใช้ hqOsu!".format(userID))
+				log.info("Account ID {} เขาใช้ hqOsu!".format(userID))
 				if userUtils.isRestricted(userID):
 					responseToken.enqueue(serverPackets.notification("เจ้ากำลังทดสอบ hqOsu อย่างนั้นหรอ? ไปเล่น https://cookiezi.pw ซะนะคะ >w<"))
-					#if glob.conf.config["discord"]["enable"] == True:
-					webhook = aobaHelper.Webhook(glob.conf.config["discord"]["anticheat"],color=0xadd8e6,footer="ไม่น่าเล้ยยย คนแบบนี้ : (")
-					webhook.set_title(title="จับคนโกงได้จ้าาา ID {}".format(userID))
-					webhook.set_desc(f' นั้นใช้ hqOsu!')
-					log.info("Sent to webhook {} DONE!!".format(glob.conf.config["discord"]["enable"]))
-					webhook.post()
+					if glob.conf.config["discord"]["enable"]:
+							webhook = Webhook(glob.conf.config["discord"]["anticheat"],
+											  color=0xadd836,
+											  footer="Man... this is worst player. [ Client AC ]")
+							webhook.set_title(title=f"Catched some cheater {username} ({userID})")
+							webhook.set_desc(f'This body catched with flag {haxFlags}\nIn enuming: {hack}')
+							webhook.post()
 				else:
 					glob.tokens.deleteToken(userID)
 					userUtils.restrict(userID)
-					#if glob.conf.config["discord"]["enable"] == True:
-					webhook = aobaHelper.Webhook(glob.conf.config["discord"]["anticheat"],color=0xadd8e6,footer="ไม่น่าเล้ยยย คนแบบนี้ : (")
-					webhook.set_title(title="จับคนโกงได้จ้าาา ID {}".format(userID))
-					webhook.set_desc(f' นั้นใช้ hqOsu และได้โดน restricted!')
-					log.info("Sent to webhook {} DONE!!".format(glob.conf.config["discord"]["enable"]))
-					webhook.post()
+					if glob.conf.config["discord"]["enable"]:
+							webhook = Webhook(glob.conf.config["discord"]["anticheat"],
+											  color=0xadd836,
+											  footer="Man... this is worst player. [ Client AC ]")
+							webhook.set_title(title=f"Catched some cheater {username} ({userID})")
+							webhook.set_desc(f'This body catched with flag {haxFlags}\nIn enuming: {hack}')
+							webhook.post()
 					raise exceptions.loginCheatClientsException()
 			elif aobaHelper.getOsuVer(userID) == "b20160403.6":
-				log.info("Account ID {} นั้นใช้ hqOsu!".format(userID))
+				log.info("Account ID {} เขาใช้ hqOsu!".format(userID))
 				if userUtils.isRestricted(userID):
 					responseToken.enqueue(serverPackets.notification("เจ้ากำลังทดสอบ hqOsu อย่างนั้นหรอ? ไปเล่น https://cookiezi.pw ซะนะคะ >w<"))
-					#if glob.conf.config["discord"]["enable"] == True:
-					webhook = aobaHelper.Webhook(glob.conf.config["discord"]["anticheat"],color=0xadd8e6,footer="ไม่น่าเล้ยยย คนแบบนี้ : (")
-					webhook.set_title(title="จับคนโกงได้จ้าาา ID {}".format(userID))
-					webhook.set_desc(f' นั้นใช้ hqOsu!')
-					log.info("Sent to webhook {} DONE!!".format(glob.conf.config["discord"]["enable"]))
-					webhook.post()
+					if glob.conf.config["discord"]["enable"]:
+							webhook = Webhook(glob.conf.config["discord"]["anticheat"],
+											  color=0xadd836,
+											  footer="Man... this is worst player. [ Client AC ]")
+							webhook.set_title(title=f"Catched some cheater {username} ({userID})")
+							webhook.set_desc(f'This body catched with flag {haxFlags}\nIn enuming: {hack}')
+							webhook.post()
 				else:
 					glob.tokens.deleteToken(userID)
 					userUtils.restrict(userID)
-					#if glob.conf.config["discord"]["enable"] == True:
-					webhook = aobaHelper.Webhook(glob.conf.config["discord"]["anticheat"],color=0xadd8e6,footer="ไม่น่าเล้ยยย คนแบบนี้ : (")
-					webhook.set_title(title="จับคนโกงได้จ้าาา ID {}".format(userID))
-					webhook.set_desc(f' นั้นใช้ hqOsu และได้โดน restricted!')
-					log.info("Sent to webhook {} DONE!!".format(glob.conf.config["discord"]["enable"]))
-					webhook.post()
+					if glob.conf.config["discord"]["enable"]:
+							webhook = Webhook(glob.conf.config["discord"]["anticheat"],
+											  color=0xadd836,
+											  footer="Man... this is worst player. [ Client AC ]")
+							webhook.set_title(title=f"Catched some cheater {username} ({userID})")
+							webhook.set_desc(f'This body catched with flag {haxFlags}\nIn enuming: {hack}')
+							webhook.post()
 					raise exceptions.loginCheatClientsException()
 
 		# Send all needed login packets
