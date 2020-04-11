@@ -1289,7 +1289,7 @@ def editMap(fro, chan, message): # Using Atoka's editMap with Aoba's edit
 
 	# Only allow users to request maps in #admin channel or PMs with AC. Heavily reduced spam smh
 	if chan.startswith('#') and chan != '#admin' and not privileges & 8388608:
-		return "Map ranking is not permitted in regular channels, please do so in PMs with AC (or #admin if administrator)."
+		return "Map ranking is not permitted in regular channels, please do so in PMs with Kukuri (or #admin if administrator)."
 
 	# Grab beatmapData from db
 	try:
