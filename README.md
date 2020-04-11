@@ -10,11 +10,8 @@
 - Raven
 
 ## How to set up Hoaqbot
-First of all, initialize and update the submodules
 ```
-$ git submodule init && git submodule update
-```
-afterwards, install the required dependencies with pip
+install requirements
 ```
 $ pip install -r requirements.txt
 ```
@@ -22,7 +19,7 @@ then, compile all `*.pyx` files to `*.so` or `*.dll` files using `setup.py` (dis
 ```
 $ python3 setup.py build_ext --inplace
 ```
-finally, run pep.py once to create the default config file and edit it
+finally, run hoaq.py once to create the default config file and edit it
 ```
 $ python3 hoaq.py
 ...
