@@ -297,6 +297,7 @@ def handle(tornadoRequest):
 		chat.joinChannel(token=responseToken, channel="#osu")
 		chat.joinChannel(token=responseToken, channel="#announce")
 		chat.joinChannel(token=responseToken, channel="#thai")
+		chat.joinChannel(token=responseToken, channel="#ranked")
 
 
 		# Join admin channel if we are an admin
