@@ -66,12 +66,12 @@ class token:
 		self.spamRate = 0
 
 		# Stats cache
-		if userID == 1000:
+		if userID == 1007:
 			self.actionID = actions.WATCHING
 		else:
 			self.actionID = actions.IDLE
-		if userID == 1000:
-			self.actionText = "nHentai"
+		if userID == 1007:
+			self.actionText = "YEDHEE"
 		else:
 			self.actionText = ""
 		self.actionMd5 = ""
