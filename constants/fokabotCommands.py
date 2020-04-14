@@ -79,6 +79,7 @@ def faq(fro, chan, message):
 		"offend": "Please don't offend other players",
 		"github": "(osu!lumilous's Github page!)[https://github.com/osulumilous]",
 		"discord": "(Join o!lumilous Discord!)[https://discord.lumilous.pw]",
+		"blog": "(Visit osu!lumilous Blog)[https://medium.com/osulumilous]",
 		"changelog": "(Check on Discord!)[https://discord.lumilous.pw]",
 		"english": "Please keep this channel in english.",
 		"thai": "Please keep this channel in Thai",
