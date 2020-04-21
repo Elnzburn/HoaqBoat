@@ -243,5 +243,13 @@ class handler(requestsManager.asyncRequestHandler):
 	@tornado.web.asynchronous
 	@tornado.gen.engine
 	def asyncGet(self):
-		html = 	"<html><head><title>HoaqBoat??</title>"
+		html = 	"<html><head><title>HoaqBoat??</title></head><body>"
+		html += " _   _                   _                 _   <br>"
+		html += "| | | |                 | |               | |  <br>"
+		html += "| |_| | ___   __ _  __ _| |__   ___   __ _| |_ <br>"
+		html += "|  _  |/ _ \ / _` |/ _` | '_ \ / _ \ / _` | __|<br>"
+		html += "| | | | (_) | (_| | (_| | |_) | (_) | (_| | |_ <br>"
+		html += "\_| |_/\___/ \__,_|\__, |_.__/ \___/ \__,_|\__|<br>"
+		html += "                      | |                      <br>"
+		html += "                      |_|                      <br></pre></body></html>"
 		self.write(html)
