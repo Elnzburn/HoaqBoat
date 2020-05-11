@@ -9,27 +9,16 @@ def printServerStartHeader(asciiArt=True):
 	:return:
 	"""
 	if asciiArt:
-		print("{}           _                 __".format(bcolors.GREEN))
-		print("          (_)              /  /")
-		print("   ______ __ ____   ____  /  /____")
-		print("  /  ___/  /  _  \\/  _  \\/  /  _  \\")
-		print(" /  /  /  /  /_) /  /_) /  /  ____/")
-		print("/__/  /__/  .___/  .___/__/ \\_____/")
-		print("        /  /   /  /")
-		print("       /__/   /__/\r\n")
-		print("                          .. o  .")
-		print("                         o.o o . o")
-		print("                        oo...")
-		print("                    __[]__")
-		print("Steal by Hoaqbot| ______/o_o_o_|__  ")
-		print("             \\\"\"\"\"\"\"\"\"\"\"\"\"\"\"/")
-		print("              \\ . ..  .. . /")
-		print("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^{}".format(bcolors.ENDC))
+		print("{}   __                 _ _                 ".format(bcolors.PINK))
+		print("  / / _   _ _ __ ___ (_) | ___  _   _ ___ ")
+		print(" / / | | | | '_ ` _ \| | |/ _ \| | | / __|")
+		print("/ /__| |_| | | | | | | | | (_) | |_| \__ ")
+		print("\____/\__,_|_| |_| |_|_|_|\___/ \__,_|___/{}".format(bcolors.ENDC))
 
-	printColored("> Welcome to HoaqBoat osu!bancho server v{}".format(glob.VERSION), bcolors.GREEN)
+	printColored("> Welcome to HoaqBoat osu!bancho server v{}".format(glob.VERSION), bcolors.PINK)
 	printColored("> Made by the Ripple team, custom by osu!lumilous", bcolors.GREEN)
-	printColored("> {}https://zxq.co/ripple/pep.py".format(bcolors.UNDERLINE), bcolors.GREEN)
-	printColored("> Press CTRL+C to exit\n", bcolors.GREEN)
+	printColored("> {}https://zxq.co/ripple/pep.py".format(bcolors.UNDERLINE), bcolors.PINK)
+	printColored("> Press CTRL+C to exit\n", bcolors.PINK)
 
 def printNoNl(string):
 	"""
