@@ -12,7 +12,6 @@ import redis
 import json
 import shutil
 
-from common import generalUtils, agpl
 from common.constants import bcolors
 from common.db import dbConnector
 from common.ddog import datadogClient
@@ -59,13 +58,6 @@ def make_app():
 
 
 if __name__ == "__main__":
-	# AGPL license agreement
-	try:
-		agpl.check_license("ripple", "pep.py")
-	except agpl.LicenseError as e:
-		print(str(e))
-		sys.exit(1)
-
 	try:
 		# Server start
 		consoleHelper.printServerStartHeader(True)
