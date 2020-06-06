@@ -4,11 +4,6 @@ from flask import Flask, send_file, jsonify
 from subprocess import call
 from sys import platform as _platform
 
-if _platform == 'win32' or _platform == 'win64':
-    call('cls', shell=True)
-elif _platform == 'linux' or _platform == 'linux2':
-    call('clear', shell=True)
-
 f = Figlet(font='stop')
 print(f.renderText('Avatar-Server'))
 
