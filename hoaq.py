@@ -321,7 +321,15 @@ if __name__ == "__main__":
 		tornado.ioloop.IOLoop.instance().start()
 
 		# Start Avatar Server
-		handler.avatar.app.run()
+		try:
+			consoleHelper.printNoN1("> Running to Avatar-server...")
+			app.run()
+			consoleHelper.printNoNl(" ")
+			consoleHelper.printDone()
+		except:
+			consoleHelper.printError()
+			consoleHelper.printColored("Failed to run Avatar-server, you broke", bcolors.RED)
+
 
 	finally:
 		system.dispose()
