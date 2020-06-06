@@ -26,6 +26,7 @@ from handlers import apiServerStatusHandler
 from handlers import apiVerifiedStatusHandler
 from handlers import ciTriggerHandler
 from handlers import mainHandler
+from handlers.avatar import avater
 from helpers import configHelper
 from helpers import consoleHelper
 from helpers import systemHelper as system
@@ -318,5 +319,9 @@ if __name__ == "__main__":
 		# Start tornado
 		glob.application.listen(serverPort)
 		tornado.ioloop.IOLoop.instance().start()
+
+		# Start Avatar Server
+		handler.avatar.app.run()
+
 	finally:
 		system.dispose()
